@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="index.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+</head>
+<body ng-app="app">
+    
+    <div ng-controller="ListController as vm" class=" todo-list">
+
+
+        <div class="container">
+            <div>
+                <h1 class="title has-text-centered">
+                    Lista de Tarefas
+                </h1>
+
+                <p>
+                    Concluidas: 
+                    <b>{{vm.todoDone()}}</b> 
+                    <a href="" ng-click="vm.archiveTodo()">[Arquivar]</a>
+                </p>
+                
+            </div>
+        </div>
+            
+        <ul class="menu-list">
+                <li ng-repeat="item in vm.todoList" class="list-item" >                  
+                    <div class="has-text-weight-semibold items">
+                        {{item.text}}
+                        <div class="inputs">
+                            <input type="checkbox" ng-model="item.done" >
+                            <button class="button is-small" ng-click="vm.removeTodo(item)" >
+                                <i class="fas fa-times" size="3x"></i>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+        </ul>
+
+
+        <form ng-submit="vm.addTodo()">
+            <div class="field has-addons">
+                <div class="control">
+                  <input class="input" type="text" ng-model="vm.textToDo" placeholder="add nova tarefa aqui">
+                </div>
+                <div class="control">
+                  <input type="submit" class="button is-info" value="+">
+                </div>
+              </div>
+        </form>        
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

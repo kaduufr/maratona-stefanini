@@ -1,0 +1,60 @@
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    background: linear-gradient(to right, #06beb6, #48b1bf); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.todo-list {
+    
+    flex: 1;
+
+    margin: 16px;
+    max-width: 300px;
+    min-height: 300px;
+    align-content: stretch;
+    max-height: auto;
+}
+
+.todo-list .title {
+    padding: 8px 0;
+}
+
+.todo-list ul {
+    padding: 16px 0;
+}
+
+.list-item {
+    margin: 1px;
+}
+
+.menu-list div {
+    border-radius: 2px;
+    color: #f1f1f1;
+    display: block;
+    padding: .5em .75em;
+    font-size: 20px;
+}
+
+.control {
+    min-width: 100%;
+}
+
+.list-item .items  {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.inputs button {
+    background-color: transparent;
+    border: transparent;
+    color: #f1f1f1;
+}
