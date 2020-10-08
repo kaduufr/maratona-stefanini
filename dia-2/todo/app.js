@@ -28,8 +28,7 @@
             vm.textToDo = ''
         }
         function archiveTodos() {
-            let undone = vm.todoList.filter(todo => !todo.done)
-            return undone
+            vm.todoList = vm.todoList.filter(todo => !todo.done)
         }
         function removeTodo(todo) {
             const getIndex = vm.todoList.indexOf(todo)
